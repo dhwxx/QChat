@@ -1,11 +1,11 @@
 # QChat
-A static android project analogous to qq
 
-kotlin | compose
+## a static android project analogous to qq
 
+### kotlin | compose
 
-build.gradle -- project
-
+```
+//build.gradle -- project
 buildscript {
     ext {
         compose_version = '1.3.2'
@@ -16,26 +16,24 @@ plugins {
     id 'com.android.library' version '7.4.1' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
 }
+```
 
-build.gradle -- module
-
+```
+//build.gradle -- module
 buildscript {
     ext.kotlin_version = '1.7.20'
     repositories {
         google()
         jcenter()
-
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-//        1
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
     }
 }
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-//    2
     id 'kotlin-android-extensions'
 }
 
@@ -80,7 +78,6 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
-//    3
     androidExtensions {
         experimental = true
     }
@@ -119,7 +116,6 @@ dependencies {
     implementation 'androidx.compose.material:material-icons-extended'
     // Optional - Add window size utils
     implementation 'androidx.compose.material3:material3-window-size-class'
-
     // Optional - Integration with activities
     implementation 'androidx.activity:activity-compose:1.5.1'
     // Optional - Integration with ViewModels
@@ -128,23 +124,15 @@ dependencies {
     implementation 'androidx.compose.runtime:runtime-livedata'
     // Optional - Integration with RxJava
     implementation 'androidx.compose.runtime:runtime-rxjava2'
-
     implementation "androidx.navigation:navigation-compose:2.5.3"
-
-//    约束布局
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     // To use constraintlayout in compose
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
-//    获取网络图片
     implementation("io.coil-kt:coil-compose:2.1.0")
-
     implementation 'androidx.compose.material:material-icons-extended:1.3.1'
-
     implementation "androidx.compose.runtime:runtime-livedata:1.3.3"
-
     implementation "com.google.accompanist:accompanist-pager:0.21.1-beta"
-
 }
 
-
+```
 
