@@ -4,6 +4,8 @@
 
 ### kotlin | compose
 
+#### project configuration
+
 ```
 //build.gradle -- project
 buildscript {
@@ -36,24 +38,20 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-android-extensions'
 }
-
 android {
     namespace 'com.example.work_home'
     compileSdk 33
-
     defaultConfig {
         applicationId "com.example.work_home"
         minSdk 24
         targetSdk 33
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary true
         }
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -82,13 +80,10 @@ android {
         experimental = true
     }
 }
-
 dependencies {
-
     def composeBom = platform('androidx.compose:compose-bom:2022.12.00')
     implementation composeBom
     androidTestImplementation composeBom
-
     // Choose one of the following:
     // Material Design 3
     implementation 'androidx.compose.material3:material3'
@@ -99,15 +94,12 @@ dependencies {
     // or only import the main APIs for the underlying toolkit systems,
     // such as input and measurement/layout
     implementation 'androidx.compose.ui:ui'
-
     // Android Studio Preview support
     implementation 'androidx.compose.ui:ui-tooling-preview'
     debugImplementation 'androidx.compose.ui:ui-tooling'
-
     // UI Tests
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
-
     // Optional - Included automatically by material, only add when you need
     // the icons but not the material library (e.g. when using Material3 or a
     // custom design system based on Foundation)
@@ -135,4 +127,10 @@ dependencies {
 }
 
 ```
+
+#### UI display
+
+| ![](https://mybucket-wrq-n1.oss-cn-beijing.aliyuncs.com/1.png) | ![](https://mybucket-wrq-n1.oss-cn-beijing.aliyuncs.com/2.png) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![](https://mybucket-wrq-n1.oss-cn-beijing.aliyuncs.com/3.png) | ![](https://mybucket-wrq-n1.oss-cn-beijing.aliyuncs.com/4.png) |
 
